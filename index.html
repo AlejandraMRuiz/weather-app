@@ -72,8 +72,10 @@
 		</style>
 	</head>
 	<body>
-		<h1>🌤️</h1>
-		<h1>Currently 16° in San Diego</h1>
+		<h1>
+			🌤️ <br />
+			Currently 16° in San Diego
+		</h1>
 		<h2>13° / <span class="maxDegrees">23°</span></h2>
 
 		<div class="day">
@@ -91,5 +93,22 @@
 
 		<button>Change city</button>
 		<p>Coded by Alejandra M. Ruiz</p>
+		<script>
+			let changeCityBtn = document.querySelector('button');
+			let heading = document.querySelector('h1');
+
+			function changeCity() {
+				let city = prompt('What city do you live in?');
+				let temperature = prompt('What temperature is it?');
+
+				if (temperature <= 10) {
+					heading.innerHTML = `🥶 <br />Currently ${temperature}° in ${city}`;
+				} else {
+					heading.innerHTML = `😃 <br />Currently ${temperature}° in ${city}`;
+				}
+			}
+
+			changeCityBtn.addEventListener('click', changeCity);
+		</script>
 	</body>
 </html>
